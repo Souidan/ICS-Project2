@@ -102,10 +102,12 @@ whole
 
 
 
-
-
-
-
+data_height$Sport <- as.factor(data_height$Sport)
+levels(data_height$Sport)
+anova <- aov(Height ~ Sport, data = data_height)
+summary(anova)
+pairwise.t.test(data_height$Height, data_height$Sport,
+                p.adjust.method = "bonferroni")
 
 
 
